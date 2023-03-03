@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/wall_8"
+    tools:context=".DoctorRegistrationActivity">
+
+    <TextView
+        android:id="@+id/doctorRegistrationTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Doctor Registration"
+        android:textSize="34sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.022" />
+
+    <EditText
+        android:id="@+id/doctorRegistrationFullName"
+        android:layout_width="358dp"
+        android:layout_height="40dp"
+        android:background="@drawable/input_bg"
+        android:drawableLeft="@drawable/user2"
+        android:drawablePadding="15px"
+        android:ems="10"
+        android:hint="Doctor Name"
+        android:inputType="textPersonName"
+        android:paddingLeft="25px"
+        android:text=""
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.509"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/doctorRegistrationTitle"
+        app:layout_constraintVertical_bias="0.061" />
+
+    <EditText
+        android:id="@+id/editTextTextPersonName2"
+        android:layout_width="358dp"
+        android:layout_height="40dp"
+        android:background="@drawable/input_bg"
+        android:drawableLeft="@drawable/number"
+        android:drawablePadding="15px"
+        android:ems="10"
+        android:hint="BMA Registration No"
+        android:inputType="textPersonName"
+        android:paddingLeft="25px"
+        android:text=""
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.509"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/doctorRegistrationFullName"
+        app:layout_constraintVertical_bias="0.036" />
+
+    <EditText
+        android:id="@+id/editTextTextPersonName3"
+        android:layout_width="358dp"
+        android:layout_height="40dp"
+        android:background="@drawable/input_bg"
+        android:drawableLeft="@drawable/specialization"
+        android:drawablePadding="15px"
+        android:ems="10"
+        android:hint="Speciality"
+        android:inputType="textPersonName"
+        android:paddingLeft="25px"
+        android:text=""
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.49"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName2"
+        app:layout_constraintVertical_bias="0.042" />
+
+    <EditText
+        android:id="@+id/editTextTextPersonName4"
+        android:layout_width="358dp"
+        android:layout_height="40dp"
+        android:background="@drawable/input_bg"
+        android:drawableLeft="@drawable/email"
+        android:drawablePadding="15px"
+        android:ems="10"
+        android:hint="Email"
+        android:inputType="textPersonName"
+        android:paddingLeft="25px"
+        android:text=""
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.509"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName3"
+        app:layout_constraintVertical_bias="0.046" />
+
+    <EditText
+        android:id="@+id/editTextTextPersonName5"
+        android:layout_width="358dp"
+        android:layout_height="40dp"
+        android:background="@drawable/input_bg"
+        android:drawableLeft="@drawable/phone"
+        android:drawablePadding="15px"
+        android:ems="10"
+        android:hint="Mobile"
+        android:inputType="textPersonName"
+        android:paddingLeft="25px"
+        android:text=""
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.49"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName4"
+        app:layout_constraintVertical_bias="0.069" />
+
+    <EditText
+        android:id="@+id/editTextTextPersonName6"
+        android:layout_width="358dp"
+        android:layout_height="40dp"
+        android:background="@drawable/input_bg"
+        android:drawableLeft="@drawable/age"
+        android:drawablePadding="15px"
+        android:ems="10"
+        android:hint="Age"
+        android:inputType="textPersonName"
+        android:paddingLeft="25px"
+        android:text=""
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.49"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName5"
+        app:layout_constraintVertical_bias="0.075" />
+
+    <Button
+        android:id="@+id/buttonDoctorSignup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Signup"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName6"
+        app:layout_constraintVertical_bias="0.174" />
+
+    <TextView
+        android:id="@+id/doctorRegistrationHome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Back to Home"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonDoctorSignup" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

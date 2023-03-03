@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="VcsDirectoryMappings">
+    <mapping directory="$PROJECT_DIR$/MyApplication1" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/OMS" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Spring-practice-project" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/myandorid" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/myangular" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/myspringboot" vcs="Git" />
+  </component>
+</project>
