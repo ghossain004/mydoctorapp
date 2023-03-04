@@ -13,8 +13,8 @@
         android:layout_height="match_parent"
         android:background="@drawable/wall_11"
         tools:context=".RegistrationActivity"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="-154dp">
+        tools:layout_editor_absoluteX="-129dp"
+        tools:layout_editor_absoluteY="-66dp">
 
         <TextView
             android:id="@+id/UserRegistrationTitle"
@@ -25,13 +25,13 @@
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintHorizontal_bias="0.496"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.022" />
+            app:layout_constraintVertical_bias="0.055" />
 
         <EditText
-            android:id="@+id/UserRegistrationUserName"
+            android:id="@+id/userRegistrationUserName"
             android:layout_width="351dp"
             android:layout_height="40dp"
             android:background="@drawable/input_bg"
@@ -47,7 +47,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/userRegistrationFullName"
-            app:layout_constraintVertical_bias="0.051" />
+            app:layout_constraintVertical_bias="0.037" />
 
         <EditText
             android:id="@+id/userRegistrationPassword"
@@ -66,7 +66,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/userRegistrationMobile"
-            app:layout_constraintVertical_bias="0.08" />
+            app:layout_constraintVertical_bias="0.059" />
 
         <EditText
             android:id="@+id/userRegistrationConPassword"
@@ -85,7 +85,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/userRegistrationPassword"
-            app:layout_constraintVertical_bias="0.087" />
+            app:layout_constraintVertical_bias="0.058" />
 
         <EditText
             android:id="@+id/userRegistrationMobile"
@@ -104,7 +104,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/userRegistrationEmail"
-            app:layout_constraintVertical_bias="0.062" />
+            app:layout_constraintVertical_bias="0.048" />
 
         <EditText
             android:id="@+id/userRegistrationEmail"
@@ -122,14 +122,13 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/UserRegistrationUserName"
-            app:layout_constraintVertical_bias="0.051" />
+            app:layout_constraintTop_toBottomOf="@+id/userRegistrationUserName"
+            app:layout_constraintVertical_bias="0.04" />
 
         <EditText
             android:id="@+id/userRegistrationFullName"
             android:layout_width="351dp"
             android:layout_height="40dp"
-            android:layout_marginBottom="576dp"
             android:background="@drawable/input_bg"
             android:drawableLeft="@drawable/user2"
             android:drawablePadding="15px"
@@ -141,7 +140,9 @@
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/UserRegistrationTitle"
+            app:layout_constraintVertical_bias="0.064" />
 
         <Button
             android:id="@+id/RegistrationSignup"
@@ -153,7 +154,7 @@
             app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/userRegistrationConPassword"
-            app:layout_constraintVertical_bias="0.195" />
+            app:layout_constraintVertical_bias="0.203" />
 
         <TextView
             android:id="@+id/RegistrationLogin"
@@ -169,7 +170,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/RegistrationSignup"
-            app:layout_constraintVertical_bias="0.49" />
+            app:layout_constraintVertical_bias="0.302" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

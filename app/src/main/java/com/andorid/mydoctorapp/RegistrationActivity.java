@@ -24,7 +24,7 @@ public class RegistrationActivity extends AppCompatActivity {
         setContentView(R.layout.activity_registration);
 
         edfullName = findViewById(R.id.userRegistrationFullName);
-        eduserName = findViewById(R.id.UserRegistrationUserName);
+        eduserName = findViewById(R.id.userRegistrationUserName);
         edemail = findViewById(R.id.userRegistrationEmail);
         edmobile = findViewById(R.id.userRegistrationMobile);
         edpassword = findViewById(R.id.userRegistrationPassword);

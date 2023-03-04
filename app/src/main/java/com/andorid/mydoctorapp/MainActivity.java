@@ -12,6 +12,8 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.andorid.mydoctorapp.database.Database;
+
 public class MainActivity extends AppCompatActivity {
 
     EditText userName, password;
@@ -23,11 +25,11 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        userName = findViewById(R.id.editTextTextLoginUsername);
-        password = findViewById(R.id.editTextTextLoginPassword);
-        btnLogin = findViewById(R.id.buttonLogin);
-        tvSignup = findViewById(R.id.textViewSignup);
-        DataTransfer dt = new DataTransfer(getApplicationContext(), "socialbook", null,1);
+        userName = findViewById(R.id.loginUserName);
+        password = findViewById(R.id.loginUserPass);
+        btnLogin = findViewById(R.id.loginButton);
+        tvSignup = findViewById(R.id.loginCreate);
+        Database dt = new Database(getApplicationContext(), "healthcare", null,1);
 
         tvSignup.setOnClickListener(new View.OnClickListener() {
             @Override

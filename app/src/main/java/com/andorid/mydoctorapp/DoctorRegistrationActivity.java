@@ -10,50 +10,62 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.andorid.mydoctorapp.database.Database;
+import com.andorid.mydoctorapp.entity.Doctor;
+
 public class DoctorRegistrationActivity extends AppCompatActivity {
 
-    EditText edDoctorName, edEmail, edAddress;
-    Button btnSubmit;
-    TextView tvTitle, tvBack;
+    EditText edDoctorName, edBmaRegistration, edSpeciality, edEmail, edMobile, edAge;
+    Button btnSignup;
+    TextView tvBackLogin;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_doctor_registration);
 
-        edDoctorName = findViewById(R.id.editTextDoctorName);
-        edEmail = findViewById(R.id.editTextDcotorEmail);
-        edAddress = findViewById(R.id.editTextDoctorAddress);
-        btnSubmit = findViewById(R.id.buttonDoctorSubmit);
-        tvBack = findViewById(R.id.textViewBack);
+        edDoctorName = findViewById(R.id.doctorRegistrationFullName);
+        edBmaRegistration = findViewById(R.id.doctorRegistrationBMA);
+        edSpeciality = findViewById(R.id.doctorRegistrationSpeciality);
+        edEmail = findViewById(R.id.doctorRegistrationEmail);
+        edMobile = findViewById(R.id.doctorRegistrationMobile);
+        edAge = findViewById(R.id.doctorRegistrationAge);
+        btnSignup = findViewById(R.id.buttonDoctorSignup);
+        tvBackLogin = findViewById(R.id.doctorRegistrationHome);
 
-        btnSubmit.setOnClickListener(new View.OnClickListener() {
+        btnSignup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String doctorName =  edDoctorName.getText().toString();
-                String doctorEmail = edEmail.getText().toString();
-                String doctorAddress = edAddress.getText().toString();
+                String doctorName = edDoctorName.getText().toString();
+                String bmaRegistration = edBmaRegistration.getText().toString();
+                String speciality = edSpeciality.getText().toString();
+                String email = edEmail.getText().toString();
+                String mobile = edMobile.getText().toString();
+                String age = edAge.getText().toString();
 
                 Doctor dc = new Doctor();
                 dc.setDoctorName(doctorName);
-                dc.setEmail(doctorEmail);
-                dc.setAddress(doctorAddress);
+                dc.setRegistrationNumber(bmaRegistration);
+                dc.setSpeciality(speciality);
+                dc.setEmail(email);
+                dc.setMobile(mobile);
+                dc.setAge(age);
 
-                DataTransfer dt = new DataTransfer(getApplicationContext(), "healthcare", null, 1);
-                if (doctorName.length()==0 || doctorEmail.length()==0 || doctorAddress.length()==0){
+                Database db = new Database(getApplicationContext(), "healthcare", null, 1);
+                if (doctorName.length()==0 || bmaRegistration.length()==0 || speciality.length()==0 || email.length()==0 || mobile.length()==0 || age.length()==0){
                     Toast.makeText(getApplicationContext(), "Please Fill All The Field", Toast.LENGTH_SHORT).show();
                 }else {
-                    dt.addDoctor(dc);
-                    startActivity(new Intent(DoctorDetailsActivity.this, HomeActivity.class));
+                    db.addDoctor(dc);
+                    startActivity(new Intent(DoctorRegistrationActivity.this, HomeActivity.class));
                     Toast.makeText(getApplicationContext(), "Doctor Created", Toast.LENGTH_SHORT).show();
                 }
             }
         });
 
-        tvBack.setOnClickListener(new View.OnClickListener() {
+        tvBackLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(DoctorDetailsActivity.this, HomeActivity.class));
+                startActivity(new Intent(DoctorRegistrationActivity.this, HomeActivity.class));
             }
         });
     }

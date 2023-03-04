@@ -10,6 +10,8 @@ import android.database.sqlite.SQLiteOpenHelper;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
+import com.andorid.mydoctorapp.entity.Doctor;
+
 public class Database extends SQLiteOpenHelper {
     public Database(@Nullable Context context, @Nullable String name, @Nullable SQLiteDatabase.CursorFactory factory, int version) {
         super(context, name, factory, version);
@@ -28,7 +30,7 @@ public class Database extends SQLiteOpenHelper {
     private static final String FULL_NAME_COL = "fullName";
     private static final String USER_NAME_COL = "userName";
     private static final String EMAIL_COL = "email";
-    private static final String MOBILE_COL = "email";
+    private static final String MOBILE_COL = "mobile";
     private static final String PASSWORD_COL = "password";
 
     @Override
@@ -49,8 +51,11 @@ public class Database extends SQLiteOpenHelper {
         String query3 = "CREATE TABLE " + "doctors" + "("
                 + ID_COL + " INTEGER PRIMARY KEY AUTOINCREMENT,"
                 + "doctorName" + " TEXT,"
+                + "regist rationNumber" + " TEXT,"
+                + "speciality" + " TEXT,"
                 + "email" + " TEXT,"
-                + "address" + " TEXT)";
+                + "mobile" + " TEXT,"
+                + "age" + " TEXT)";
 
         sqLiteDatabase.execSQL(query2);
         sqLiteDatabase.execSQL(query3);
@@ -74,15 +79,18 @@ public class Database extends SQLiteOpenHelper {
         db.close();
     }
 
-//    public void addDoctor(Doctor doctor){
-//        SQLiteDatabase db = this.getWritableDatabase();
-//        ContentValues values =  new ContentValues();
-//        values.put("doctorName", doctor.getDoctorName());
-//        values.put("email", doctor.getEmail());
-//        values.put("address", doctor.getAddress());
-//        db.insert("doctors", null, values);
-//        db.close();
-//    }
+    public void addDoctor(Doctor doctor){
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues values =  new ContentValues();
+        values.put("doctorName", doctor.getDoctorName());
+        values.put("registrationNumber", doctor.getRegistrationNumber());
+        values.put("speciality", doctor.getSpeciality());
+        values.put("email", doctor.getEmail());
+        values.put("mobile", doctor.getMobile());
+        values.put("age", doctor.getAge());
+        db.insert("doctors", null, values);
+        db.close();
+    }
 
     public int login(String userName, String password){
 
