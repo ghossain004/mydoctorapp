@@ -41,7 +41,7 @@
         app:layout_constraintVertical_bias="0.061" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName2"
+        android:id="@+id/doctorRegistrationBMA"
         android:layout_width="358dp"
         android:layout_height="40dp"
         android:background="@drawable/input_bg"
@@ -60,7 +60,7 @@
         app:layout_constraintVertical_bias="0.036" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName3"
+        android:id="@+id/doctorRegistrationSpeciality"
         android:layout_width="358dp"
         android:layout_height="40dp"
         android:background="@drawable/input_bg"
@@ -75,11 +75,11 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.49"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName2"
+        app:layout_constraintTop_toBottomOf="@+id/doctorRegistrationBMA"
         app:layout_constraintVertical_bias="0.042" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName4"
+        android:id="@+id/doctorRegistrationEmail"
         android:layout_width="358dp"
         android:layout_height="40dp"
         android:background="@drawable/input_bg"
@@ -94,11 +94,11 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.509"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName3"
+        app:layout_constraintTop_toBottomOf="@+id/doctorRegistrationSpeciality"
         app:layout_constraintVertical_bias="0.046" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName5"
+        android:id="@+id/doctorRegistrationMobile"
         android:layout_width="358dp"
         android:layout_height="40dp"
         android:background="@drawable/input_bg"
@@ -113,11 +113,11 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.49"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName4"
+        app:layout_constraintTop_toBottomOf="@+id/doctorRegistrationEmail"
         app:layout_constraintVertical_bias="0.069" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName6"
+        android:id="@+id/doctorRegistrationAge"
         android:layout_width="358dp"
         android:layout_height="40dp"
         android:background="@drawable/input_bg"
@@ -132,7 +132,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.49"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName5"
+        app:layout_constraintTop_toBottomOf="@+id/doctorRegistrationMobile"
         app:layout_constraintVertical_bias="0.075" />
 
     <Button
@@ -144,7 +144,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName6"
+        app:layout_constraintTop_toBottomOf="@+id/doctorRegistrationAge"
         app:layout_constraintVertical_bias="0.174" />
 
     <TextView

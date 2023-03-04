@@ -25,8 +25,10 @@ public class Database extends SQLiteOpenHelper {
 
     private static final String TABLE_NAME = "user";
     private static final String ID_COL = "id";
+    private static final String FULL_NAME_COL = "fullName";
     private static final String USER_NAME_COL = "userName";
     private static final String EMAIL_COL = "email";
+    private static final String MOBILE_COL = "email";
     private static final String PASSWORD_COL = "password";
 
     @Override
@@ -38,8 +40,10 @@ public class Database extends SQLiteOpenHelper {
 
         String query2 = "CREATE TABLE " + TABLE_NAME + "("
                 + ID_COL + " INTEGER PRIMARY KEY AUTOINCREMENT,"
+                + FULL_NAME_COL + " TEXT,"
                 + USER_NAME_COL + " TEXT,"
                 + EMAIL_COL + " TEXT,"
+                + MOBILE_COL + " TEXT,"
                 + PASSWORD_COL + " TEXT)";
 
         String query3 = "CREATE TABLE " + "doctors" + "("
@@ -58,11 +62,13 @@ public class Database extends SQLiteOpenHelper {
 
     }
 
-    public void addNewUser(String userName, String email, String password){
+    public void addNewUser(String fullName, String userName, String email, String mobile, String password){
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values =  new ContentValues();
+        values.put(FULL_NAME_COL, fullName);
         values.put(USER_NAME_COL, userName);
         values.put(EMAIL_COL, email);
+        values.put(MOBILE_COL, mobile);
         values.put(PASSWORD_COL, password);
         db.insert(TABLE_NAME, null, values);
         db.close();
