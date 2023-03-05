@@ -51,7 +51,7 @@ public class Database extends SQLiteOpenHelper {
         String query3 = "CREATE TABLE " + "doctors" + "("
                 + ID_COL + " INTEGER PRIMARY KEY AUTOINCREMENT,"
                 + "doctorName" + " TEXT,"
-                + "regist rationNumber" + " TEXT,"
+                + "registrationNumber " + " TEXT,"
                 + "speciality" + " TEXT,"
                 + "email" + " TEXT,"
                 + "mobile" + " TEXT,"
