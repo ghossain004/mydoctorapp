@@ -12,6 +12,9 @@ import androidx.annotation.Nullable;
 
 import com.andorid.mydoctorapp.entity.Doctor;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+
 public class Database extends SQLiteOpenHelper {
     public Database(@Nullable Context context, @Nullable String name, @Nullable SQLiteDatabase.CursorFactory factory, int version) {
         super(context, name, factory, version);
@@ -52,10 +55,10 @@ public class Database extends SQLiteOpenHelper {
                 + ID_COL + " INTEGER PRIMARY KEY AUTOINCREMENT,"
                 + "doctorName" + " TEXT,"
                 + "registrationNumber " + " TEXT,"
-                + "speciality" + " TEXT,"
-                + "email" + " TEXT,"
-                + "mobile" + " TEXT,"
-                + "age" + " TEXT)";
+                + "speciality " + " TEXT,"
+                + "email " + " TEXT,"
+                + "mobile " + " TEXT,"
+                + "age " + " TEXT)";
 
         sqLiteDatabase.execSQL(query2);
         sqLiteDatabase.execSQL(query3);
@@ -103,5 +106,45 @@ public class Database extends SQLiteOpenHelper {
             return 1;
         }
         return 0;
+    }
+
+    public ArrayList<HashMap<String, String>> getDoctors(){
+        HashMap<String, String> doctors;
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor c = db.rawQuery("select * from doctors", null);
+        ArrayList<HashMap<String, String>> doctorList = new ArrayList<>(c.getCount());
+        if (c.moveToFirst()){
+            do{
+                doctors = new HashMap<>();
+                doctors.put("id", c.getString(0));
+                doctors.put("doctorName", c.getString(1));
+                doctors.put("email", c.getString(2));
+                doctors.put("address", c.getString(3));
+                doctorList.add(doctors);
+            }while (c.moveToNext());
+        }
+        db.close();
+        return doctorList;
+    }
+
+    public boolean deleteDoctor(int id){
+        SQLiteDatabase db = this.getWritableDatabase();
+        int rowCount = db.delete(TABLE_NAME, "id = ?", new String[]{id + ""});
+        db.close();
+        return rowCount>0;
+    }
+
+    public boolean updateDoctor(Doctor doctor){
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues values =  new ContentValues();
+        values.put("doctorName", doctor.getDoctorName());
+        values.put("registrationNumber", doctor.getRegistrationNumber());
+        values.put("speciality", doctor.getSpeciality());
+        values.put("email", doctor.getEmail());
+        values.put("mobile", doctor.getMobile());
+        values.put("age", doctor.getAge());
+        long result = db.update("doctors", values, "id = ?", new String[]{doctor.getId() + ""});
+        db.close();
+        return result > 0;
     }
 }

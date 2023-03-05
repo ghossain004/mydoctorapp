@@ -34,6 +34,13 @@ public class HomeActivity extends AppCompatActivity {
             }
         });
 
+        btnFindDoctor.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(HomeActivity.this, FindDoctorActivity.class));
+            }
+        });
+
         btnLogout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

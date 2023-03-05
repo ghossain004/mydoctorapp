@@ -19,6 +19,8 @@ public class DoctorRegistrationActivity extends AppCompatActivity {
     Button btnSignup;
     TextView tvBackLogin;
 
+    private int id;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,6 +35,20 @@ public class DoctorRegistrationActivity extends AppCompatActivity {
         btnSignup = findViewById(R.id.buttonDoctorSignup);
         tvBackLogin = findViewById(R.id.doctorRegistrationHome);
 
+        Bundle data = getIntent().getExtras();
+
+        if (data != null){
+            id = data.getInt("id");
+            String doctorName = data.getString("doctorName");
+            String email = data.getString("email");
+            String address = data.getString("address");
+
+            edDoctorName.setText(doctorName);
+            edEmail.setText(email);
+            edAddress.setText(address);
+            btnSubmit.setText("Update");
+        }
+
         btnSignup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -44,6 +60,7 @@ public class DoctorRegistrationActivity extends AppCompatActivity {
                 String age = edAge.getText().toString();
 
                 Doctor dc = new Doctor();
+                dc.setId(id);
                 dc.setDoctorName(doctorName);
                 dc.setRegistrationNumber(bmaRegistration);
                 dc.setSpeciality(speciality);
@@ -55,9 +72,17 @@ public class DoctorRegistrationActivity extends AppCompatActivity {
                 if (doctorName.length()==0 || bmaRegistration.length()==0 || speciality.length()==0 || email.length()==0 || mobile.length()==0 || age.length()==0){
                     Toast.makeText(getApplicationContext(), "Please Fill All The Field", Toast.LENGTH_SHORT).show();
                 }else {
-                    db.addDoctor(dc);
-                    startActivity(new Intent(DoctorRegistrationActivity.this, HomeActivity.class));
-                    Toast.makeText(getApplicationContext(), "Doctor Created", Toast.LENGTH_SHORT).show();
+                    if (dc.getId()!=null){
+                        System.out.println("update");
+                        db.updateDoctor(dc);
+                        startActivity(new Intent(DoctorRegistrationActivity.this, FindDoctorActivity.class));
+                    }else {
+                        System.out.println("create");
+                        db.addDoctor(dc);
+                        startActivity(new Intent(DoctorRegistrationActivity.this, HomeActivity.class));
+                        Toast.makeText(getApplicationContext(), "Doctor Created", Toast.LENGTH_SHORT).show();
+                    }
+
                 }
             }
         });
