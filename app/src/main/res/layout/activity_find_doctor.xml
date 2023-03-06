@@ -81,6 +81,7 @@
     </LinearLayout>
 
     <ListView
+        android:id="@+id/doctorList"
         android:layout_width="match_parent"
         android:layout_height="600dp"
         app:layout_constraintBottom_toBottomOf="parent"

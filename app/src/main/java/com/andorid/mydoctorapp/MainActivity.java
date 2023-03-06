@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -19,6 +20,7 @@ public class MainActivity extends AppCompatActivity {
     EditText userName, password;
     Button btnLogin;
     TextView tvSignup;
+    ImageView imgShowPass;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,6 +63,7 @@ public class MainActivity extends AppCompatActivity {
                         editor.putString("userName", _userName);
                         editor.apply();
                         startActivity(new Intent(MainActivity.this, HomeActivity.class));
+                        Toast.makeText(getApplicationContext(),"Welcome "+_userName+"!",Toast.LENGTH_SHORT).show();
                     }else {
                         Toast.makeText(getApplicationContext(), "User name or password is incorrect", Toast.LENGTH_SHORT).show();
                     }

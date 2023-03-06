@@ -41,7 +41,7 @@ public class FindDoctorActivity extends AppCompatActivity {
         sa = new SimpleAdapter(this,
                 list,
                 R.layout.list_view_layout, new String[]{
-                "id", "doctorName", "email", "address"
+                "id", "doctorName", "registrationNumber", "speciality", "email", "mobile", "age"
         }, new int[]{R.id.viewId, R.id.viewName, R.id.viewEmail, R.id.viewAddress}){
             @Override
             public View getView(int position, View convertView, ViewGroup parent) {
@@ -53,17 +53,20 @@ public class FindDoctorActivity extends AppCompatActivity {
                     @Override
                     public void onClick(View view) {
                         System.out.println(position);
-                        HashMap<String, String> user;
+                        HashMap<String, String> doctor;
 
                         try {
-                            user = (HashMap<String, String>) list.get(position);
-                            System.out.println(user);
+                            doctor = (HashMap<String, String>) list.get(position);
+                            System.out.println(doctor);
 
-                            Intent intent = new Intent(DcotorListActivity.this, DoctorDetailsActivity.class);
-                            intent.putExtra("id", Integer.parseInt(user.get("id")));
-                            intent.putExtra("doctorName", user.get("doctorName"));
-                            intent.putExtra("email", user.get("email"));
-                            intent.putExtra("address", user.get("address"));
+                            Intent intent = new Intent(FindDoctorActivity.this, DoctorRegistrationActivity.class);
+                            intent.putExtra("id", Integer.parseInt(doctor.get("id")));
+                            intent.putExtra("doctorName", doctor.get("doctorName"));
+                            intent.putExtra("registrationNumber", doctor.get("registrationNumber"));
+                            intent.putExtra("speciality", doctor.get("speciality"));
+                            intent.putExtra("email", doctor.get("email"));
+                            intent.putExtra("mobile", doctor.get("mobile"));
+                            intent.putExtra("age", doctor.get("age"));
                             startActivity(intent);
                         }catch (Exception e){
                             System.out.println(e);
@@ -75,18 +78,18 @@ public class FindDoctorActivity extends AppCompatActivity {
                     @Override
                     public void onClick(View view) {
                         System.out.println(position);
-                        HashMap<String, String> user;
+                        HashMap<String, String> doctor;
 
                         try {
-                            user = (HashMap<String, String>) list.get(position);
-                            boolean deleted = dt.deleteDoctor((Integer.parseInt(user.get("id"))));
+                            doctor = (HashMap<String, String>) list.get(position);
+                            boolean deleted = db.deleteDoctor((Integer.parseInt(doctor.get("id"))));
                             if (deleted){
                                 list.remove((position));
                                 notifyDataSetChanged();
                             }
                             String message = deleted ? "Successfully deleted" : "Failed to delete";
                             Toast.makeText(getApplicationContext(), message, Toast.LENGTH_SHORT).show();
-                            System.out.println(user);
+                            System.out.println(doctor);
                         }catch (Exception e){
                             System.out.println(e);
                         }

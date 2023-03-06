@@ -25,7 +25,7 @@ public class HomeActivity extends AppCompatActivity {
 
         SharedPreferences sharedPreferences = getSharedPreferences("shared_pref", Context.MODE_PRIVATE);
         String userName = sharedPreferences.getString("userName","").toString();
-        Toast.makeText(getApplicationContext(),"Welcome "+userName+"!",Toast.LENGTH_SHORT).show();
+//        Toast.makeText(getApplicationContext(),"Welcome "+userName+"!",Toast.LENGTH_SHORT).show();
 
         btnDoctorRegistration.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -45,6 +45,7 @@ public class HomeActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(HomeActivity.this, MainActivity.class));
+                Toast.makeText(getApplicationContext(),"Logout from "+userName+"!",Toast.LENGTH_SHORT).show();
             }
         });
     }

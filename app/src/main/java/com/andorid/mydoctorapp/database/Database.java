@@ -118,8 +118,11 @@ public class Database extends SQLiteOpenHelper {
                 doctors = new HashMap<>();
                 doctors.put("id", c.getString(0));
                 doctors.put("doctorName", c.getString(1));
-                doctors.put("email", c.getString(2));
-                doctors.put("address", c.getString(3));
+                doctors.put("registrationNumber", c.getString(2));
+                doctors.put("speciality", c.getString(3));
+                doctors.put("email", c.getString(4));
+                doctors.put("mobile", c.getString(5));
+                doctors.put("age", c.getString(6));
                 doctorList.add(doctors);
             }while (c.moveToNext());
         }
@@ -129,7 +132,7 @@ public class Database extends SQLiteOpenHelper {
 
     public boolean deleteDoctor(int id){
         SQLiteDatabase db = this.getWritableDatabase();
-        int rowCount = db.delete(TABLE_NAME, "id = ?", new String[]{id + ""});
+        int rowCount = db.delete("doctors", "id = ?", new String[]{id + ""});
         db.close();
         return rowCount>0;
     }

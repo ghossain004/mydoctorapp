@@ -38,6 +38,12 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:src="@drawable/home"/>
+
+                <Button
+                    android:id="@+id/homeDoctorRegistration"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Add Doctor" />
             </LinearLayout>
         </androidx.cardview.widget.CardView>
 
@@ -60,10 +66,17 @@
                 android:layout_gravity="center_vertical|center_horizontal"
                 android:gravity="center"
                 android:orientation="vertical">
+
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:src="@drawable/home"/>
+
+                <Button
+                    android:id="@+id/homeFindDoctor"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Find Doctor" />
             </LinearLayout>
         </androidx.cardview.widget.CardView>
 
@@ -86,10 +99,16 @@
                 android:layout_gravity="center_vertical|center_horizontal"
                 android:gravity="center"
                 android:orientation="vertical">
+
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:src="@drawable/home"/>
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Button"/>
             </LinearLayout>
         </androidx.cardview.widget.CardView>
 
@@ -112,10 +131,16 @@
                 android:layout_gravity="center_vertical|center_horizontal"
                 android:gravity="center"
                 android:orientation="vertical">
+
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:src="@drawable/home"/>
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Button"/>
             </LinearLayout>
         </androidx.cardview.widget.CardView>
 
@@ -138,10 +163,16 @@
                 android:layout_gravity="center_vertical|center_horizontal"
                 android:gravity="center"
                 android:orientation="vertical">
+
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:src="@drawable/home"/>
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Button"/>
             </LinearLayout>
         </androidx.cardview.widget.CardView>
 
@@ -164,10 +195,17 @@
                 android:layout_gravity="center_vertical|center_horizontal"
                 android:gravity="center"
                 android:orientation="vertical">
+
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:src="@drawable/home"/>
+
+                <Button
+                    android:id="@+id/homeLogout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Logout" />
             </LinearLayout>
         </androidx.cardview.widget.CardView>
     </GridLayout>

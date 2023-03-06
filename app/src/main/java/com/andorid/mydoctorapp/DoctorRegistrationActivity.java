@@ -19,7 +19,7 @@ public class DoctorRegistrationActivity extends AppCompatActivity {
     Button btnSignup;
     TextView tvBackLogin;
 
-    private int id;
+    private Integer id;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,13 +40,19 @@ public class DoctorRegistrationActivity extends AppCompatActivity {
         if (data != null){
             id = data.getInt("id");
             String doctorName = data.getString("doctorName");
+            String registrationNumber = data.getString("registrationNumber");
+            String speciality = data.getString("speciality");
             String email = data.getString("email");
-            String address = data.getString("address");
+            String mobile = data.getString("mobile");
+            String age = data.getString("age");
 
             edDoctorName.setText(doctorName);
+            edBmaRegistration.setText(registrationNumber);
+            edSpeciality.setText(speciality);
             edEmail.setText(email);
-            edAddress.setText(address);
-            btnSubmit.setText("Update");
+            edMobile.setText(mobile);
+            edAge.setText(age);
+            btnSignup.setText("Update");
         }
 
         btnSignup.setOnClickListener(new View.OnClickListener() {
@@ -60,7 +66,6 @@ public class DoctorRegistrationActivity extends AppCompatActivity {
                 String age = edAge.getText().toString();
 
                 Doctor dc = new Doctor();
-                dc.setId(id);
                 dc.setDoctorName(doctorName);
                 dc.setRegistrationNumber(bmaRegistration);
                 dc.setSpeciality(speciality);
@@ -72,8 +77,9 @@ public class DoctorRegistrationActivity extends AppCompatActivity {
                 if (doctorName.length()==0 || bmaRegistration.length()==0 || speciality.length()==0 || email.length()==0 || mobile.length()==0 || age.length()==0){
                     Toast.makeText(getApplicationContext(), "Please Fill All The Field", Toast.LENGTH_SHORT).show();
                 }else {
-                    if (dc.getId()!=null){
+                    if (id!=null){
                         System.out.println("update");
+                        dc.setId(id);
                         db.updateDoctor(dc);
                         startActivity(new Intent(DoctorRegistrationActivity.this, FindDoctorActivity.class));
                     }else {
