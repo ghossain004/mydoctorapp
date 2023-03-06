@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/wall_16"
-    tools:context=".FindDoctorActivity">
+    android:background="@drawable/wall_10"
+    tools:context=".FindPatientActivity">
 
     <Button
         android:id="@+id/buttonBackToHome"
@@ -53,20 +53,29 @@
             android:textSize="13sp" />
 
         <TextView
-            android:id="@+id/email"
+            android:id="@+id/age"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="0.20"
-            android:text="BMA Reg No"
+            android:layout_weight="0.10"
+            android:text="Age"
             android:textColor="@color/black"
             android:textSize="13sp" />
 
         <TextView
-            android:id="@+id/address"
+            android:id="@+id/reg"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="0.20"
-            android:text="Speciality"
+            android:layout_weight="0.15"
+            android:text="Reg No"
+            android:textColor="@color/black"
+            android:textSize="13sp" />
+
+        <TextView
+            android:id="@+id/disease"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.15"
+            android:text="Disease"
             android:textColor="@color/black"
             android:textSize="13sp" />
 
@@ -82,7 +91,7 @@
     </LinearLayout>
 
     <ListView
-        android:id="@+id/doctorList"
+        android:id="@+id/patientsList"
         android:layout_width="match_parent"
         android:layout_height="600dp"
         app:layout_constraintBottom_toBottomOf="parent"

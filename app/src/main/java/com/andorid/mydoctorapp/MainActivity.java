@@ -6,6 +6,9 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.text.method.HideReturnsTransformationMethod;
+import android.text.method.PasswordTransformationMethod;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -21,6 +24,7 @@ public class MainActivity extends AppCompatActivity {
     Button btnLogin;
     TextView tvSignup;
     ImageView imgShowPass;
+    boolean passwordVisible;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,19 +35,40 @@ public class MainActivity extends AppCompatActivity {
         password = findViewById(R.id.loginUserPass);
         btnLogin = findViewById(R.id.loginButton);
         tvSignup = findViewById(R.id.loginCreate);
+//        imgShowPass = findViewById(R.id.showPass);
         Database dt = new Database(getApplicationContext(), "healthcare", null,1);
 
         tvSignup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-//                Intent it = new Intent(MainActivity.this, RegistrationActivity.class);
-//                it.putExtra("username", userName.getText());
-//                it.putExtra("password", password.getText());
-//                startActivity(it);
 
                 startActivity(new Intent(MainActivity.this, RegistrationActivity.class));
             }
         });
+
+//        imgShowPass.setOnTouchListener(new View.OnTouchListener() {
+//            @Override
+//            public boolean onTouch(View view, MotionEvent motionEvent) {
+//                final int RIGHT = 2;
+//                if (motionEvent.getAction() == MotionEvent.ACTION_UP){
+//                    if (motionEvent.getRawX()>= password.getRight()-password.getCompoundDrawables()[RIGHT].getBounds().width()){
+//                        int selection = password.getSelectionEnd();
+//                        if (passwordVisible){
+//                            password.setCompoundDrawablesRelativeWithIntrinsicBounds(0, 0, R.drawable.show_pass, 0);
+//                            password.setTransformationMethod(PasswordTransformationMethod.getInstance());
+//                            passwordVisible = false;
+//                        }else {
+//                            password.setCompoundDrawablesRelativeWithIntrinsicBounds(0, 0, R.drawable.show_pass, 0);
+//                            password.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
+//                            passwordVisible = true;
+//                        }
+//                        password.setSelection(selection);
+//                        return true;
+//                    }
+//                }
+//                return false;
+//            }
+//        });
 
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -32,20 +32,29 @@
             android:textSize="13sp" />
 
         <TextView
-            android:id="@+id/viewEmail"
+            android:id="@+id/viewReg"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="0.20"
-            android:text="Registration No"
+            android:layout_weight="0.15"
+            android:text="Reg No"
             android:textColor="@color/black"
             android:textSize="13sp" />
 
         <TextView
-            android:id="@+id/viewAddress"
+            android:id="@+id/viewAge"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="0.20"
-            android:text="Speciality"
+            android:layout_weight="0.10"
+            android:text="age"
+            android:textColor="@color/black"
+            android:textSize="13sp" />
+
+        <TextView
+            android:id="@+id/viewDisease"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.15"
+            android:text="Disease"
             android:textColor="@color/black"
             android:textSize="13sp" />
 
@@ -64,7 +73,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="0.10"
-            android:drawableRight="@drawable/delete_icon"
+            android:drawableLeft="@drawable/delete_icon"
             android:text=""
             android:textColor="@color/black"
             android:textSize="13sp" />

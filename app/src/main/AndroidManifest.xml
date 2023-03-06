@@ -24,6 +24,12 @@
             android:name=".HomeActivity"
             android:exported="false" />
         <activity
+            android:name=".PatientRegistrationActivity"
+            android:exported="true"/>
+        <activity
+            android:name=".FindPatientActivity"
+            android:exported="true"/>
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>

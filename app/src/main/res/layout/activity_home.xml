@@ -4,32 +4,33 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/wall_1"
+    android:background="@drawable/wall_17"
     tools:context=".HomeActivity">
 
     <GridLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_margin="20dp"
         android:columnCount="2"
-        android:rowCount="3"
-        android:layout_margin="20dp">
+        android:rowCount="3">
 
         <androidx.cardview.widget.CardView
-            android:id="@+id/cardLogout"
+            android:id="@+id/cardAddDoctor"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_row="0"
-            android:layout_column="0"
             android:layout_rowWeight="1"
+            android:layout_column="0"
             android:layout_columnWeight="1"
             android:layout_gravity="fill"
-            app:cardBackgroundColor="@color/teal_200"
+            app:cardBackgroundColor="@color/articlecolor"
             app:cardCornerRadius="8dp"
             app:cardElevation="8dp"
             app:cardUseCompatPadding="true">
+
             <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:layout_gravity="center_vertical|center_horizontal"
                 android:gravity="center"
                 android:orientation="vertical">
@@ -37,13 +38,15 @@
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/home"/>
+                    android:src="@drawable/add_doctor_2" />
 
-                <Button
+                <TextView
                     android:id="@+id/homeDoctorRegistration"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Add Doctor" />
+                    android:text="Add Doctor"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
             </LinearLayout>
         </androidx.cardview.widget.CardView>
 
@@ -52,17 +55,18 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_row="0"
-            android:layout_column="1"
             android:layout_rowWeight="1"
+            android:layout_column="1"
             android:layout_columnWeight="1"
             android:layout_gravity="fill"
-            app:cardBackgroundColor="@color/teal_200"
+            app:cardBackgroundColor="@color/article_title"
             app:cardCornerRadius="8dp"
             app:cardElevation="8dp"
             app:cardUseCompatPadding="true">
+
             <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:layout_gravity="center_vertical|center_horizontal"
                 android:gravity="center"
                 android:orientation="vertical">
@@ -70,29 +74,32 @@
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/home"/>
+                    android:src="@drawable/search_2" />
 
-                <Button
+                <TextView
                     android:id="@+id/homeFindDoctor"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Find Doctor" />
+                    android:text="Find Doctor"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
             </LinearLayout>
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
-            android:id="@+id/cardAddDoctor"
+            android:id="@+id/cardAddPatient"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_row="1"
+            android:layout_rowWeight="1"
             android:layout_column="0"
-            android:layout_rowWeight="1"
             android:layout_columnWeight="1"
             android:layout_gravity="fill"
-            app:cardBackgroundColor="@color/teal_200"
+            app:cardBackgroundColor="@color/article_title"
             app:cardCornerRadius="8dp"
             app:cardElevation="8dp"
             app:cardUseCompatPadding="true">
+
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -103,31 +110,35 @@
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/home"/>
+                    android:src="@drawable/add_patient_2" />
 
-                <Button
+                <TextView
+                    android:id="@+id/homeAddPatient"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Button"/>
+                    android:text="Add Patient"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
             </LinearLayout>
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
-            android:id="@+id/card3"
+            android:id="@+id/cardFindPatient"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_row="1"
-            android:layout_column="1"
             android:layout_rowWeight="1"
+            android:layout_column="1"
             android:layout_columnWeight="1"
             android:layout_gravity="fill"
-            app:cardBackgroundColor="@color/teal_200"
+            app:cardBackgroundColor="@color/article_title"
             app:cardCornerRadius="8dp"
             app:cardElevation="8dp"
             app:cardUseCompatPadding="true">
+
             <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:layout_gravity="center_vertical|center_horizontal"
                 android:gravity="center"
                 android:orientation="vertical">
@@ -135,12 +146,15 @@
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/home"/>
+                    android:src="@drawable/search_2" />
 
-                <Button
+                <TextView
+                    android:id="@+id/homeFindPatient"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Button"/>
+                    android:text="Find Patient"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
             </LinearLayout>
         </androidx.cardview.widget.CardView>
 
@@ -149,17 +163,18 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_row="2"
-            android:layout_column="0"
             android:layout_rowWeight="1"
+            android:layout_column="0"
             android:layout_columnWeight="1"
             android:layout_gravity="fill"
-            app:cardBackgroundColor="@color/teal_200"
+            app:cardBackgroundColor="@color/article_title"
             app:cardCornerRadius="8dp"
             app:cardElevation="8dp"
             app:cardUseCompatPadding="true">
+
             <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:layout_gravity="center_vertical|center_horizontal"
                 android:gravity="center"
                 android:orientation="vertical">
@@ -167,31 +182,34 @@
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/home"/>
+                    android:src="@drawable/home_2" />
 
-                <Button
+                <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Button"/>
+                    android:text="Button"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
             </LinearLayout>
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
-            android:id="@+id/card5"
+            android:id="@+id/cardLogout"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_row="2"
-            android:layout_column="1"
             android:layout_rowWeight="1"
+            android:layout_column="1"
             android:layout_columnWeight="1"
             android:layout_gravity="fill"
-            app:cardBackgroundColor="@color/teal_200"
+            app:cardBackgroundColor="@color/article_title"
             app:cardCornerRadius="8dp"
             app:cardElevation="8dp"
             app:cardUseCompatPadding="true">
+
             <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:layout_gravity="center_vertical|center_horizontal"
                 android:gravity="center"
                 android:orientation="vertical">
@@ -199,13 +217,15 @@
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/home"/>
+                    android:src="@drawable/logout_2" />
 
-                <Button
+                <TextView
                     android:id="@+id/homeLogout"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Logout" />
+                    android:text="Logout"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
             </LinearLayout>
         </androidx.cardview.widget.CardView>
     </GridLayout>
