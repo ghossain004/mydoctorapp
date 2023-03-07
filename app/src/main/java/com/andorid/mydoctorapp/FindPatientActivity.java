@@ -41,7 +41,7 @@ public class FindPatientActivity extends AppCompatActivity {
         sa = new SimpleAdapter(this,
                 list,
                 R.layout.list_view_layout_2, new String[]{
-                "id", "patientName", "registrationNumber", "disease", "email", "mobile", "age"
+                "id", "patientName", "age", "registrationNumber", "disease", "email", "mobile"
         }, new int[]{R.id.viewId, R.id.viewName, R.id.viewReg, R.id.viewAge, R.id.viewDisease}){
             @Override
             public View getView(int position, View convertView, ViewGroup parent) {

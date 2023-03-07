@@ -46,29 +46,29 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-//        imgShowPass.setOnTouchListener(new View.OnTouchListener() {
-//            @Override
-//            public boolean onTouch(View view, MotionEvent motionEvent) {
-//                final int RIGHT = 2;
-//                if (motionEvent.getAction() == MotionEvent.ACTION_UP){
-//                    if (motionEvent.getRawX()>= password.getRight()-password.getCompoundDrawables()[RIGHT].getBounds().width()){
-//                        int selection = password.getSelectionEnd();
-//                        if (passwordVisible){
-//                            password.setCompoundDrawablesRelativeWithIntrinsicBounds(0, 0, R.drawable.show_pass, 0);
-//                            password.setTransformationMethod(PasswordTransformationMethod.getInstance());
-//                            passwordVisible = false;
-//                        }else {
-//                            password.setCompoundDrawablesRelativeWithIntrinsicBounds(0, 0, R.drawable.show_pass, 0);
-//                            password.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
-//                            passwordVisible = true;
-//                        }
-//                        password.setSelection(selection);
-//                        return true;
-//                    }
-//                }
-//                return false;
-//            }
-//        });
+        password.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View view, MotionEvent motionEvent) {
+                final int RIGHT = 2;
+                if (motionEvent.getAction() == MotionEvent.ACTION_UP){
+                    if (motionEvent.getRawX()>= password.getRight()-password.getCompoundDrawables()[RIGHT].getBounds().width()){
+                        int selection = password.getSelectionEnd();
+                        if (passwordVisible){
+                            password.setCompoundDrawablesRelativeWithIntrinsicBounds(0, 0, R.drawable.show_pass, 0);
+                            password.setTransformationMethod(PasswordTransformationMethod.getInstance());
+                            passwordVisible = false;
+                        }else {
+                            password.setCompoundDrawablesRelativeWithIntrinsicBounds(0, 0, R.drawable.show_pass, 0);
+                            password.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
+                            passwordVisible = true;
+                        }
+                        password.setSelection(selection);
+                        return true;
+                    }
+                }
+                return false;
+            }
+        });
 
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override

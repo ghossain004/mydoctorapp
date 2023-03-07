@@ -71,6 +71,7 @@
         android:layout_height="40dp"
         android:background="@drawable/input_bg"
         android:drawableLeft="@drawable/password_3"
+        android:drawableRight="@drawable/show_pass"
         android:drawablePadding="10px"
         android:ems="10"
         android:hint="password"
