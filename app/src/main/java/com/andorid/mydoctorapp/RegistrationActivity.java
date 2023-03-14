@@ -4,9 +4,12 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.method.HideReturnsTransformationMethod;
+import android.text.method.PasswordTransformationMethod;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -17,6 +20,10 @@ public class RegistrationActivity extends AppCompatActivity {
     EditText edfullName, eduserName, edemail, edmobile, edpassword, edconfirmPassword;
     Button btnSignup;
     TextView tvLogin;
+    ImageView imgShowPass, imgShowPass2;
+
+    int show = 0;
+    int show2 = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +38,8 @@ public class RegistrationActivity extends AppCompatActivity {
         edconfirmPassword = findViewById(R.id.userRegistrationConPassword);
         btnSignup = findViewById(R.id.RegistrationSignup);
         tvLogin = findViewById(R.id.RegistrationLogin);
+        imgShowPass = findViewById(R.id.showPass);
+        imgShowPass2 = findViewById(R.id.showPass2);
 
         btnSignup.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -68,6 +77,34 @@ public class RegistrationActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(RegistrationActivity.this, MainActivity.class));
+            }
+        });
+
+        imgShowPass.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                if(show==0){
+                    show = 1;
+                    edpassword.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
+                }else {
+                    show = 0;
+                    edpassword.setTransformationMethod(PasswordTransformationMethod.getInstance());
+                }
+            }
+        });
+
+        imgShowPass2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                if(show2==0){
+                    show2 = 1;
+                    edconfirmPassword.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
+                }else {
+                    show2 = 0;
+                    edconfirmPassword.setTransformationMethod(PasswordTransformationMethod.getInstance());
+                }
             }
         });
     }

@@ -9,9 +9,9 @@
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/doctor_icon"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:src="@drawable/app_logo"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.479"
@@ -53,25 +53,12 @@
         app:layout_constraintTop_toBottomOf="@+id/LoginTitle"
         app:layout_constraintVertical_bias="0.105" />
 
-    <!--    <ImageView-->
-    <!--        android:id="@+id/showPass"-->
-    <!--        android:layout_width="wrap_content"-->
-    <!--        android:layout_height="wrap_content"-->
-    <!--        android:src="@drawable/show_pass"-->
-    <!--        app:layout_constraintBottom_toBottomOf="parent"-->
-    <!--        app:layout_constraintEnd_toEndOf="parent"-->
-    <!--        app:layout_constraintHorizontal_bias="0.875"-->
-    <!--        app:layout_constraintStart_toStartOf="parent"-->
-    <!--        app:layout_constraintTop_toTopOf="parent"-->
-    <!--        app:layout_constraintVertical_bias="0.499" />-->
-
     <EditText
         android:id="@+id/loginUserPass"
         android:layout_width="332dp"
         android:layout_height="40dp"
         android:background="@drawable/input_bg"
         android:drawableLeft="@drawable/password_3"
-        android:drawableRight="@drawable/show_pass"
         android:drawablePadding="10px"
         android:ems="10"
         android:hint="password"
@@ -111,5 +98,29 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/loginButton"
         app:layout_constraintVertical_bias="0.296" />
+
+    <ImageView
+        android:id="@+id/showPass"
+        android:layout_width="40dp"
+        android:layout_height="36dp"
+        android:src="@drawable/show_pass"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.859"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/loginUserName"
+        app:layout_constraintVertical_bias="0.118" />
+
+    <!--    <ImageView-->
+<!--        android:id="@+id/showPass"-->
+<!--        android:layout_width="33dp"-->
+<!--        android:layout_height="84dp"-->
+<!--        android:src="@drawable/show_pass"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintHorizontal_bias="0.891"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/loginUserName"-->
+<!--        app:layout_constraintVertical_bias="0.054" />-->
 
 </androidx.constraintlayout.widget.ConstraintLayout>

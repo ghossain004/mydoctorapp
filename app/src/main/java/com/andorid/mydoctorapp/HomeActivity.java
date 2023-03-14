@@ -35,14 +35,6 @@ public class HomeActivity extends AppCompatActivity {
 
         SharedPreferences sharedPreferences = getSharedPreferences("shared_pref", Context.MODE_PRIVATE);
         String userName = sharedPreferences.getString("userName","").toString();
-//        Toast.makeText(getApplicationContext(),"Welcome "+userName+"!",Toast.LENGTH_SHORT).show();
-
-//        tvDoctorRegistration.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                startActivity(new Intent(HomeActivity.this, DoctorRegistrationActivity.class));
-//            }
-//        });
 
         cvAddDoctor.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -51,26 +43,12 @@ public class HomeActivity extends AppCompatActivity {
             }
         });
 
-//        tvFindDoctor.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                startActivity(new Intent(HomeActivity.this, FindDoctorActivity.class));
-//            }
-//        });
-
         cvFindDoctor.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(HomeActivity.this, FindDoctorActivity.class));
             }
         });
-
-//        tvPatientRegistration.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                startActivity(new Intent(HomeActivity.this, PatientRegistrationActivity.class));
-//            }
-//        });
 
         cvAddPatient.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -79,30 +57,12 @@ public class HomeActivity extends AppCompatActivity {
             }
         });
 
-//        tvFindPatient.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                startActivity(new Intent(HomeActivity.this, FindPatientActivity.class));
-//            }
-//        });
-
         cvFindPatient.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(HomeActivity.this, FindPatientActivity.class));
             }
         });
-
-//        tvLogout.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                SharedPreferences.Editor editor = sharedPreferences.edit();
-//                editor.clear();
-//                editor.apply();
-//                startActivity(new Intent(HomeActivity.this, MainActivity.class));
-//                Toast.makeText(getApplicationContext(),"Logout from "+userName+"!",Toast.LENGTH_SHORT).show();
-//            }
-//        });
 
         cvLogout.setOnClickListener(new View.OnClickListener() {
             @Override

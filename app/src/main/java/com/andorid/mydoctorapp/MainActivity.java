@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
     Button btnLogin;
     TextView tvSignup;
     ImageView imgShowPass;
-    boolean passwordVisible;
+    int show = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
         password = findViewById(R.id.loginUserPass);
         btnLogin = findViewById(R.id.loginButton);
         tvSignup = findViewById(R.id.loginCreate);
-//        imgShowPass = findViewById(R.id.showPass);
+        imgShowPass = findViewById(R.id.showPass);
         Database dt = new Database(getApplicationContext(), "healthcare", null,1);
 
         tvSignup.setOnClickListener(new View.OnClickListener() {
@@ -46,27 +46,17 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        password.setOnTouchListener(new View.OnTouchListener() {
+        imgShowPass.setOnClickListener(new View.OnClickListener() {
             @Override
-            public boolean onTouch(View view, MotionEvent motionEvent) {
-                final int RIGHT = 2;
-                if (motionEvent.getAction() == MotionEvent.ACTION_UP){
-                    if (motionEvent.getRawX()>= password.getRight()-password.getCompoundDrawables()[RIGHT].getBounds().width()){
-                        int selection = password.getSelectionEnd();
-                        if (passwordVisible){
-                            password.setCompoundDrawablesRelativeWithIntrinsicBounds(0, 0, R.drawable.show_pass, 0);
-                            password.setTransformationMethod(PasswordTransformationMethod.getInstance());
-                            passwordVisible = false;
-                        }else {
-                            password.setCompoundDrawablesRelativeWithIntrinsicBounds(0, 0, R.drawable.show_pass, 0);
-                            password.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
-                            passwordVisible = true;
-                        }
-                        password.setSelection(selection);
-                        return true;
-                    }
+            public void onClick(View view) {
+
+                if(show==0){
+                    show = 1;
+                    password.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
+                }else {
+                    show = 0;
+                    password.setTransformationMethod(PasswordTransformationMethod.getInstance());
                 }
-                return false;
             }
         });
 

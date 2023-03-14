@@ -172,6 +172,30 @@
             app:layout_constraintTop_toBottomOf="@+id/RegistrationSignup"
             app:layout_constraintVertical_bias="0.302" />
 
+        <ImageView
+            android:id="@+id/showPass"
+            android:layout_width="41dp"
+            android:layout_height="40dp"
+            android:src="@drawable/show_pass"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.883"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/userRegistrationMobile"
+            app:layout_constraintVertical_bias="0.056" />
+
+        <ImageView
+            android:id="@+id/showPass2"
+            android:layout_width="40dp"
+            android:layout_height="41dp"
+            android:src="@drawable/show_pass"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.881"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/showPass"
+            app:layout_constraintVertical_bias="0.055" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
